@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+        content="Salud 360 - Plataforma de seguimiento médico posterior a la consulta">
+
+    <title>Salud 360</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <!-- =====================================================
+         PANTALLA DE BIENVENIDA
+    ====================================================== -->
+
+    <!-- =========================================
+     SALUD 360 - ACCESO Y REGISTRO
+========================================= -->
+
+<section id="welcomeScreen" class="screen active">
+
+<div class="auth-layout">
+
+    <!-- PANEL IZQUIERDO -->
+
+    <div class="auth-intro">
+
+        <div class="auth-logo">
+            ♥
+        </div>
+
+        <h1>Salud <strong>360</strong></h1>
+
+        <p class="auth-slogan">
+            Tu salud continúa después de la consulta.
+        </p>
+
+        <div class="auth-benefits">
+
+            <div class="auth-benefit">
+                <span>✓</span>
+                <div>
+                    <strong>Organiza tu salud</strong>
+                    <p>Ten tus citas, medicamentos y exámenes en un solo lugar.</p>
+                </div>
+            </div>
+
+            <div class="auth-benefit">
+                <span>✓</span>
+                <div>
+                    <strong>Recibe recordatorios</strong>
+                    <p>Mantente al día con tus actividades de salud.</p>
+                </div>
+            </div>
+
+            <div class="auth-benefit">
+                <span>✓</span>
+                <div>
+                    <strong>Haz seguimiento</strong>
+                    <p>Registra tus síntomas y consulta tu evolución.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <p class="auth-footer">
+            Prototipo académico · Fundamentos de Mercadeo
+        </p>
+
+    </div>
+
+
+    <!-- PANEL DERECHO -->
+
+    <div class="auth-card">
+
+        <div class="auth-tabs">
+
+            <button
+                type="button"
+                id="showLoginBtn"
+                class="auth-tab active">
+
+                Iniciar sesión
+
+            </button>
+
+            <button
+                type="button"
+                id="showRegisterBtn"
+                class="auth-tab">
+
+                Crear cuenta
+
+            </button>
+
+        </div>
+
+
+        <!-- INICIAR SESIÓN -->
+
+        <div id="loginPanel" class="auth-panel">
+
+            <h2>¡Bienvenido de nuevo!</h2>
+
+            <p class="auth-description">
+                Ingresa a tu cuenta para continuar tu seguimiento.
+            </p>
+
+            <form id="loginForm">
+
+                <div class="auth-field">
+
+                    <label for="loginIdentifier">
+                        Correo electrónico o celular
+                    </label>
+
+                    <input
+                        type="text"
+                        id="loginIdentifier"
+                        placeholder="Ingresa tu correo o número"
+                        autocomplete="username"
+                        required>
+
+                </div>
+
+
+                <div class="auth-field">
+
+                    <label for="loginPassword">
+                        Contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="loginPassword"
+                        placeholder="Ingresa tu contraseña"
+                        autocomplete="current-password"
+                        required>
+
+                </div>
+
+
+                <div class="auth-options">
+
+                    <label class="auth-checkbox">
+
+                        <input
+                            type="checkbox"
+                            id="rememberDemo">
+
+                        <span>Recordarme</span>
+
+                    </label>
+
+                    <span class="auth-muted">
+                        Acceso de demostración
+                    </span>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="primary-button auth-submit">
+
+                    Iniciar sesión
+
+                </button>
+
+
+                <p class="auth-switch">
+                    ¿Todavía no tienes cuenta?
+
+                    <button
+                        type="button"
+                        id="loginToRegister"
+                        class="auth-link">
+
+                        Regístrate aquí
+
+                    </button>
+                </p>
+
+            </form>
+
+        </div>
+
+
+        <!-- CREAR CUENTA -->
+
+        <div
+            id="registerPanel"
+            class="auth-panel hidden">
+
+            <h2>Crea tu cuenta</h2>
+
+            <p class="auth-description">
+                Regístrate para empezar a cuidar tu salud.
+            </p>
+
+            <form id="registerForm">
+
+                <div class="auth-field">
+
+                    <label for="registerName">
+                        Nombre completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerName"
+                        placeholder="Escribe tu nombre completo"
+                        autocomplete="name"
+                        maxlength="80"
+                        required>
+
+                </div>
+
+
+                <div class="auth-field">
+
+                    <label for="registerContact">
+                        Correo electrónico o celular
+                    </label>
+
+                    <input
+                        type="text"
+                        id="registerContact"
+                        placeholder="nombre@correo.com o 3001234567"
+                        autocomplete="username"
+                        required>
+
+                    <small>
+                        Elige el dato con el que identificarías tu cuenta.
+                    </small>
+
+                </div>
+
+
+                <div class="auth-field">
+
+                    <label for="registerPassword">
+                        Crear contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPassword"
+                        placeholder="Mínimo 8 caracteres"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required>
+
+                </div>
+
+
+                <div class="auth-field">
+
+                    <label for="registerPasswordConfirm">
+                        Confirmar contraseña
+                    </label>
+
+                    <input
+                        type="password"
+                        id="registerPasswordConfirm"
+                        placeholder="Repite tu contraseña"
+                        minlength="8"
+                        autocomplete="new-password"
+                        required>
+
+                </div>
+
+
+                <label class="auth-checkbox auth-terms">
+
+                    <input
+                        type="checkbox"
+                        id="registerTerms"
+                        required>
+
+                    <span>
+                        Acepto los términos de uso y la política de
+                        tratamiento de datos.
+                    </span>
+
+                </label>
+
+
+                <button
+                    type="submit"
+                    class="primary-button auth-submit">
+
+                    Crear mi cuenta
+
+                </button>
+
+
+                <p class="auth-switch">
+                    ¿Ya tienes una cuenta?
+
+                    <button
+                        type="button"
+                        id="registerToLogin"
+                        class="auth-link">
+
+                        Inicia sesión
+
+                    </button>
+                </p>
+
+            </form>
+
+        </div>
+
+
+        <p class="auth-demo-note">
+            Prototipo de demostración. Las cuentas y el acceso
+            todavía no están conectados a un servicio de autenticación.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+    <!-- =====================================================
+         APLICACIÓN PRINCIPAL
+    ====================================================== -->
+
+    <section id="appScreen" class="screen">
+
+        <!-- ENCABEZADO -->
+
+        <header class="top-header">
+
+            <div class="brand">
+
+                <div class="brand-icon">
+                    ♥
+                </div>
+
+                <div>
+                    <h1>Salud <strong>360</strong></h1>
+                    <span>Seguimiento de salud</span>
+                </div>
+
+            </div>
+
+            <button id="profileBtn" class="profile-button">
+                <span>👤</span>
+                <span>Mi perfil</span>
+            </button>
+
+        </header>
+
+
+        <!-- CONTENIDO -->
+
+        <main class="main-content">
+
+
+            <!-- ==============================================
+                 INICIO
+            =============================================== -->
+
+            <section id="homeSection" class="app-section active">
+
+                <div class="welcome-user">
+
+                    <div>
+
+                        <p class="small-label">
+                            <Bienvenido></Bienvenido>
+                            <a href=""></a>
+                        </p>
+
+                        <h2>
+                            Hola👋
+                        </h2>
+
+                        <p>
+                            Aquí tienes un resumen de tu seguimiento.
+                        </p>
+
+                    </div>
+
+                    <div class="today-date" id="todayDate">
+                    </div>
+
+                </div>
+
+
+                <!-- RESUMEN -->
+
+                <div class="summary-grid">
+
+                    <div class="summary-card blue">
+
+                        <div class="summary-icon">
+                            📅
+                        </div>
+
+                        <div>
+                            <span>Próxima cita</span>
+                            <strong id="homeAppointmentsCount">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card green">
+
+                        <div class="summary-icon">
+                            💊
+                        </div>
+
+                        <div>
+                            <span>Medicamentos</span>
+                            <strong id="homeMedicationsCount">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card orange">
+
+                        <div class="summary-icon">
+                            🧪
+                        </div>
+
+                        <div>
+                            <span>Exámenes</span>
+                            <strong id="homeExamsCount">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="summary-card red">
+
+                        <div class="summary-icon">
+                            ❤️
+                        </div>
+
+                        <div>
+                            <span>Síntomas registrados</span>
+                            <strong id="homeSymptomsCount">
+                                0
+                            </strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ACTIVIDADES -->
+
+                <div class="dashboard-grid">
+
+                    <div class="content-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="small-label">
+                                    SEGUIMIENTO
+                                </span>
+
+                                <h3>
+                                    Próximas actividades
+                                </h3>
+                            </div>
+
+                        </div>
+
+                        <div id="upcomingActivities"
+                            class="activity-list">
+
+                            <div class="empty-state">
+
+                                <div class="empty-icon">
+                                    📋
+                                </div>
+
+                                <p>
+                                    Todavía no tienes actividades registradas.
+                                </p>
+
+                                <span>
+                                    Agrega una cita, medicamento o examen.
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="content-card alert-card">
+
+                        <div class="card-header">
+
+                            <div>
+                                <span class="small-label">
+                                    IMPORTANTE
+                                </span>
+
+                                <h3>
+                                    Recuerda
+                                </h3>
+
+                            </div>
+
+                        </div>
+
+                        <div class="remember-box">
+
+                            <div class="remember-icon">
+                                ✓
+                            </div>
+
+                            <p>
+                                Mantén actualizada la información de
+                                tu seguimiento para facilitar la continuidad
+                                del cuidado.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 MEDICAMENTOS
+            =============================================== -->
+
+            <section id="medicationsSection"
+                     class="app-section">
+
+                <div class="page-title">
+
+                    <div>
+                        <span class="small-label">
+                            SEGUIMIENTO
+                        </span>
+
+                        <h2>
+                            Mis medicamentos
+                        </h2>
+
+                        <p>
+                            Organiza tus medicamentos y horarios.
+                        </p>
+                    </div>
+
+                    <button class="primary-button"
+                            id="showMedicationFormBtn">
+
+                        + Agregar medicamento
+
+                    </button>
+
+                </div>
+
+
+                <div id="medicationFormContainer"
+                     class="form-container hidden">
+
+                    <h3>
+                        Nuevo medicamento
+                    </h3>
+
+                    <form id="medicationForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Nombre del medicamento
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="medicationName"
+                                    placeholder="Ej. Acetaminofén"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Dosis
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="medicationDose"
+                                    placeholder="Ej. 500 mg"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Frecuencia
+                                </label>
+
+                                <select id="medicationFrequency"
+                                        required>
+
+                                    <option value="">
+                                        Seleccionar
+                                    </option>
+
+                                    <option value="Una vez al día">
+                                        Una vez al día
+                                    </option>
+
+                                    <option value="Cada 8 horas">
+                                        Cada 8 horas
+                                    </option>
+
+                                    <option value="Cada 12 horas">
+                                        Cada 12 horas
+                                    </option>
+
+                                    <option value="Según indicación médica">
+                                        Según indicación médica
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Hora
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="medicationTime"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button type="submit"
+                                    class="primary-button">
+                                Guardar medicamento
+                            </button>
+
+                            <button type="button"
+                                    class="secondary-button"
+                                    id="cancelMedicationBtn">
+                                Cancelar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div id="medicationsList"
+                     class="cards-list">
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 CITAS
+            =============================================== -->
+
+            <section id="appointmentsSection"
+                     class="app-section">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="small-label">
+                            AGENDA
+                        </span>
+
+                        <h2>
+                            Mis citas
+                        </h2>
+
+                        <p>
+                            Consulta y organiza tus próximos controles.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button"
+                            id="showAppointmentFormBtn">
+
+                        + Agregar cita
+
+                    </button>
+
+                </div>
+
+
+                <div id="appointmentFormContainer"
+                     class="form-container hidden">
+
+                    <h3>
+                        Nueva cita
+                    </h3>
+
+                    <form id="appointmentForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Especialidad
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="appointmentSpecialty"
+                                    placeholder="Ej. Medicina general"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Profesional
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="appointmentDoctor"
+                                    placeholder="Nombre del profesional"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Fecha
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="appointmentDate"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Hora
+                                </label>
+
+                                <input
+                                    type="time"
+                                    id="appointmentTime"
+                                    required>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button type="submit"
+                                    class="primary-button">
+                                Guardar cita
+                            </button>
+
+                            <button type="button"
+                                    class="secondary-button"
+                                    id="cancelAppointmentBtn">
+                                Cancelar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div id="appointmentsList"
+                     class="cards-list">
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 EXÁMENES
+            =============================================== -->
+
+            <section id="examsSection"
+                     class="app-section">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="small-label">
+                            CONTROL
+                        </span>
+
+                        <h2>
+                            Mis exámenes
+                        </h2>
+
+                        <p>
+                            Registra los exámenes pendientes y realizados.
+                        </p>
+
+                    </div>
+
+                    <button class="primary-button"
+                            id="showExamFormBtn">
+
+                        + Agregar examen
+
+                    </button>
+
+                </div>
+
+
+                <div id="examFormContainer"
+                     class="form-container hidden">
+
+                    <h3>
+                        Nuevo examen
+                    </h3>
+
+                    <form id="examForm">
+
+                        <div class="form-grid">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Nombre del examen
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="examName"
+                                    placeholder="Ej. Hemograma"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Fecha
+                                </label>
+
+                                <input
+                                    type="date"
+                                    id="examDate"
+                                    required>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Estado
+                                </label>
+
+                                <select id="examStatus">
+
+                                    <option value="Pendiente">
+                                        Pendiente
+                                    </option>
+
+                                    <option value="Realizado">
+                                        Realizado
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-actions">
+
+                            <button type="submit"
+                                    class="primary-button">
+                                Guardar examen
+                            </button>
+
+                            <button type="button"
+                                    class="secondary-button"
+                                    id="cancelExamBtn">
+                                Cancelar
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+                <div id="examsList"
+                     class="cards-list">
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 SÍNTOMAS
+            =============================================== -->
+
+            <section id="symptomsSection"
+                     class="app-section">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="small-label">
+                            SEGUIMIENTO
+                        </span>
+
+                        <h2>
+                            Registrar síntomas
+                        </h2>
+
+                        <p>
+                            Registra cambios o síntomas entre consultas.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="symptom-layout">
+
+                    <div class="form-container">
+
+                        <h3>
+                            ¿Cómo te sientes?
+                        </h3>
+
+                        <form id="symptomForm">
+
+                            <div class="form-group">
+
+                                <label>
+                                    Síntoma
+                                </label>
+
+                                <select id="symptomName"
+                                        required>
+
+                                    <option value="">
+                                        Seleccionar síntoma
+                                    </option>
+
+                                    <option value="Dolor">
+                                        Dolor
+                                    </option>
+
+                                    <option value="Fiebre">
+                                        Fiebre
+                                    </option>
+
+                                    <option value="Mareo">
+                                        Mareo
+                                    </option>
+
+                                    <option value="Náuseas">
+                                        Náuseas
+                                    </option>
+
+                                    <option value="Tos">
+                                        Tos
+                                    </option>
+
+                                    <option value="Fatiga">
+                                        Fatiga
+                                    </option>
+
+                                    <option value="Otro">
+                                        Otro
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Intensidad
+                                </label>
+
+                                <div class="radio-group">
+
+                                    <label class="radio-option">
+
+                                        <input
+                                            type="radio"
+                                            name="symptomIntensity"
+                                            value="Leve"
+                                            required>
+
+                                        <span>Leve</span>
+
+                                    </label>
+
+
+                                    <label class="radio-option">
+
+                                        <input
+                                            type="radio"
+                                            name="symptomIntensity"
+                                            value="Moderada">
+
+                                        <span>Moderada</span>
+
+                                    </label>
+
+
+                                    <label class="radio-option">
+
+                                        <input
+                                            type="radio"
+                                            name="symptomIntensity"
+                                            value="Fuerte">
+
+                                        <span>Fuerte</span>
+
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-group">
+
+                                <label>
+                                    Descripción
+                                </label>
+
+                                <textarea
+                                    id="symptomDescription"
+                                    rows="5"
+                                    placeholder="Describe brevemente cómo te sientes..."></textarea>
+
+                            </div>
+
+
+                            <button type="submit"
+                                    class="primary-button full-width">
+
+                                Registrar síntoma
+
+                            </button>
+
+                        </form>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <span class="small-label">
+                            IMPORTANTE
+                        </span>
+
+                        <h3>
+                            Registro de seguimiento
+                        </h3>
+
+                        <p>
+                            Esta función está diseñada para registrar
+                            información que posteriormente puede ser
+                            revisada por el usuario o comunicada al
+                            personal de salud.
+                        </p>
+
+                        <div class="info-box">
+
+                            <strong>
+                                Salud 360 no reemplaza la valoración médica.
+                            </strong>
+
+                            <p>
+                                Ante una situación de emergencia,
+                                el usuario debe acudir a los servicios
+                                de atención correspondientes.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card history-card">
+
+                    <div class="card-header">
+
+                        <div>
+
+                            <span class="small-label">
+                                HISTORIAL
+                            </span>
+
+                            <h3>
+                                Síntomas registrados
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                    <div id="symptomsList">
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ==============================================
+                 PERFIL
+            =============================================== -->
+
+            <section id="profileSection"
+                     class="app-section">
+
+                <div class="page-title">
+
+                    <div>
+
+                        <span class="small-label">
+                            CUENTA
+                        </span>
+
+                        <h2>
+                            Mi perfil
+                        </h2>
+
+                        <p>
+                            Información básica del usuario.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="profile-card">
+
+                    <div class="profile-avatar">
+                        PG
+                    </div>
+
+                    <div>
+
+                        <h3>
+                            Paula
+                        </h3>
+
+                        <p>
+                            Usuario de demostración
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="info-grid">
+
+                    <div class="info-item">
+
+                        <span>
+                            Tipo de usuario
+                        </span>
+
+                        <strong>
+                            Paciente
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Estado del seguimiento
+                        </span>
+
+                        <strong class="status-active">
+                            Activo
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>
+                            Plataforma
+                        </span>
+
+                        <strong>
+                            Salud 360
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="content-card privacy-card">
+
+                    <span class="small-label">
+                        PRIVACIDAD
+                    </span>
+
+                    <h3>
+                        Protección de la información
+                    </h3>
+
+                    <p>
+                        En una versión real de la plataforma, la
+                        información clínica deberá manejarse bajo las
+                        medidas de seguridad, privacidad y protección
+                        de datos correspondientes.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =================================================
+             MENÚ INFERIOR
+        ================================================== -->
+
+        <nav class="bottom-nav">
+
+            <button class="nav-item active"
+                    data-section="homeSection">
+
+                <span>⌂</span>
+                <small>Inicio</small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-section="appointmentsSection">
+
+                <span>📅</span>
+                <small>Citas</small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-section="medicationsSection">
+
+                <span>💊</span>
+                <small>Medicamentos</small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-section="examsSection">
+
+                <span>🧪</span>
+                <small>Exámenes</small>
+
+            </button>
+
+
+            <button class="nav-item"
+                    data-section="symptomsSection">
+
+                <span>❤️</span>
+                <small>Síntomas</small>
+
+            </button>
+
+        </nav>
+
+    </section>
+
+
+    <!-- =====================================================
+         MENSAJE / TOAST
+    ====================================================== -->
+
+    <div id="toast"
+         class="toast">
+
+        <span id="toastMessage">
+            Guardado correctamente.
+        </span>
+
+    </div>
+
+</body>
+</html>
