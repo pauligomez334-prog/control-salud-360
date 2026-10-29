@@ -3,35 +3,31 @@
    ESTILOS PRINCIPALES
 ========================================================= */
 
+
 :root {
+  /* Identidad de Control Salud 360 */
+  --primary: #1769AA;
+  --primary-dark: #125387;
+  --primary-light: #EAF3FC;
 
-  --primary: #087f8c;
-  --primary-dark: #05616b;
-  --primary-light: #e8f8fa;
+  --secondary: #21865B;
 
-  --secondary: #16a6a0;
+  --text: #203447;
+  --text-light: #687C8D;
 
-  --text: #19323a;
-  --text-light: #718096;
+  --background: #F5F8FB;
+  --white: #FFFFFF;
+  --border: #E1EAF1;
 
-  --background: #f4f8f9;
+  --green: #21865B;
+  --orange: #D99527;
+  --red: #CF4F58;
+  --blue: #1769AA;
 
-  --white: #ffffff;
-
-  --border: #e1eaed;
-
-  --green: #2aa876;
-  --orange: #e7a23b;
-  --red: #d85b5b;
-  --blue: #4f86c6;
-
-  --shadow:
-      0 10px 30px rgba(15, 58, 67, 0.08);
+  --shadow: 0 10px 30px rgba(23, 65, 100, 0.08);
 
   --radius: 18px;
 }
-
-
 /* =========================================================
  RESET
 ========================================================= */
@@ -441,11 +437,9 @@ button {
   display: none;
 }
 
-
 .app-section.active {
   display: block;
 }
-
 
 /* =========================================================
  PAGE TITLE
@@ -2070,5 +2064,153 @@ textarea {
 
   .auth-panel h2 {
       font-size: 24px;
+  }
+}
+/* =========================================
+   CONTROL SALUD 360 - IDENTIDAD VISUAL
+========================================= */
+
+/* Pantalla de bienvenida */
+#welcomeScreen {
+  background: linear-gradient(
+    145deg,
+    #EAF3FC 0%,
+    #FFFFFF 55%,
+    #E8F6EF 100%
+  );
+}
+
+.logo-circle,
+.brand-icon {
+  background: linear-gradient(
+    135deg,
+    #1769AA,
+    #21865B
+  );
+  box-shadow: 0 10px 25px rgba(23, 105, 170, 0.16);
+}
+
+.welcome-container h1 strong,
+.brand h1 strong,
+.small-label {
+  color: #1769AA;
+}
+
+/* Botones principales */
+.primary-button {
+  background: linear-gradient(
+    135deg,
+    #1769AA,
+    #21865B
+  );
+}
+
+.primary-button:hover {
+  box-shadow: 0 8px 20px rgba(23, 105, 170, 0.20);
+}
+
+/* Encabezado y navegación */
+.top-header {
+  background: rgba(255, 255, 255, 0.97);
+}
+
+.profile-button {
+  background: #EAF3FC;
+  color: #1769AA;
+}
+
+.nav-item.active,
+.nav-item:hover {
+  color: #1769AA;
+}
+
+/* Iconos y avisos */
+.summary-card.blue .summary-icon {
+  background: #EAF3FC;
+  color: #1769AA;
+}
+
+.summary-card.green .summary-icon {
+  background: #E8F6EF;
+  color: #21865B;
+}
+
+.remember-box {
+  background: linear-gradient(135deg, #EAF3FC, #E8F6EF);
+}
+
+.remember-icon {
+  background: #1769AA;
+}
+
+/* Formularios */
+input:focus,
+select:focus,
+textarea:focus,
+.auth-field input:focus {
+  border-color: #1769AA;
+  box-shadow: 0 0 0 3px rgba(23, 105, 170, 0.10);
+}
+
+/* Acceso y registro */
+.auth-intro {
+  background: linear-gradient(150deg, #1769AA, #21865B);
+}
+
+.auth-tab.active {
+  color: #1769AA;
+}
+
+.auth-checkbox input {
+  accent-color: #21865B;
+}
+
+.auth-link {
+  color: #1769AA;
+}
+
+/* Logotipo: permite usar una imagen real */
+.logo-circle img,
+.brand-icon img,
+.auth-logo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-circle img {
+  padding: 12px;
+}
+
+.brand-icon img {
+  padding: 4px;
+}
+
+.auth-logo img {
+  padding: 5px;
+}
+
+/* Ajustes para pantallas pequeñas */
+@media (max-width: 680px) {
+  .top-header {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
+  .brand h1 {
+    font-size: 18px;
+  }
+
+  .brand span {
+    font-size: 10px;
+  }
+
+  .brand-icon {
+    flex-shrink: 0;
   }
 }
