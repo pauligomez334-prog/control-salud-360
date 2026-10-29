@@ -1790,8 +1790,7 @@ textarea {
   overflow: hidden;
   box-shadow: 0 22px 65px rgba(25, 65, 75, 0.11);
 }
-
-# 【irrelevant】.auth-intro {
+.auth-intro {
   padding: 50px 42px 30px;
   background: linear-gradient(150deg, #087f8c, #13a6a0);
   color: white;
